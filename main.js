@@ -14,4 +14,8 @@ for (let i = 0; i < width * width; i++) {
   createSquare();
 }
 
-console.log(width);
+sketchpad.addEventListener("mouseover", (e) => {
+  if (e.target.classList[0] === "square") {
+    e.target.classList.add("hovered");
+  }
+});
