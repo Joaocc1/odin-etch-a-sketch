@@ -1,4 +1,4 @@
-const container = document.querySelector(".container");
+const container = document.querySelector(".sketchpad");
 
 // create divs
 
@@ -8,6 +8,6 @@ function createSquare() {
   container.appendChild(square);
 }
 
-for (let i = 0; i < 1000; i++) {
+for (let i = 0; i < 16 * 16; i++) {
   createSquare();
 }
