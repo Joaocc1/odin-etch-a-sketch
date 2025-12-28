@@ -1,4 +1,5 @@
 const sketchpad = document.querySelector(".sketchpad");
+const wipeBtn = document.querySelector(".wipe-btn");
 let width = 16;
 
 sketchpad.style.maxWidth = `${width * 10}px`;
@@ -10,12 +11,26 @@ function createSquare() {
   sketchpad.appendChild(square);
 }
 
+// clean sketchpad board
+function wipeBoard() {
+  const squares = document.querySelectorAll(".square");
+  squares.forEach((square) => {
+    square.classList.remove("hovered");
+  });
+}
+
 for (let i = 0; i < width * width; i++) {
   createSquare();
 }
+
+// Event Listeners
 
 sketchpad.addEventListener("mouseover", (e) => {
   if (e.target.classList[0] === "square") {
     e.target.classList.add("hovered");
   }
+});
+
+wipeBtn.addEventListener("click", (e) => {
+  wipeBoard();
 });
