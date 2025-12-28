@@ -1,13 +1,17 @@
-const container = document.querySelector(".sketchpad");
+const sketchpad = document.querySelector(".sketchpad");
+let width = 16;
+
+sketchpad.style.maxWidth = `${width * 10}px`;
 
 // create divs
-
 function createSquare() {
   const square = document.createElement("div");
   square.classList.add("square");
-  container.appendChild(square);
+  sketchpad.appendChild(square);
 }
 
-for (let i = 0; i < 16 * 16; i++) {
+for (let i = 0; i < width * width; i++) {
   createSquare();
 }
+
+console.log(width);
