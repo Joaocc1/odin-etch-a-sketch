@@ -32,15 +32,16 @@ h1 {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  width: 900px;
+  height: 900px;
   background-color: #ffffff;
   border: 1px solid;
 }
 
 .square {
   box-sizing: border-box;
-  flex-basis: 10px;
-  width: 10px;
-  height: 10px;
+  flex: 1;
+  /*border: 1px solid;*/
 }
 
 .hovered {

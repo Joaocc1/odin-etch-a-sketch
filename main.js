@@ -2,12 +2,13 @@ const sketchpad = document.querySelector(".sketchpad");
 const wipeBtn = document.querySelector(".wipe-btn");
 let width = 16;
 
-sketchpad.style.maxWidth = `${width * 10}px`;
-
 // create divs
 function createSquare() {
   const square = document.createElement("div");
   square.classList.add("square");
+  square.style.height = `${900 / width}px`;
+  square.style.width = `${900 / width}px`;
+  square.style.flexBasis = `${900 / width}px`;
   sketchpad.appendChild(square);
 }
 
