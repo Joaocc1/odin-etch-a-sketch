@@ -32,14 +32,18 @@ resBtn.addEventListener("click", () => {
     "Choose a new resolution: write a number up to 100. (ex: 100 will make the sketchpad have the resolution of 100x100)",
   );
 
-  resolution = newSize;
-  const squares = document.querySelectorAll(".square");
+  if (newSize >= 1 && newSize <= 100) {
+    resolution = newSize;
+    const squares = document.querySelectorAll(".square");
 
-  squares.forEach((square) => {
-    square.remove();
-  });
+    squares.forEach((square) => {
+      square.remove();
+    });
 
-  generateGrid();
+    generateGrid();
+  } else {
+    alert("You need to choose a number between 1 and 100");
+  }
 });
 
 wipeBtn.addEventListener("click", () => {
