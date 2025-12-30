@@ -27,7 +27,7 @@ sketchpad.addEventListener("mouseover", (e) => {
 });
 
 // Get new resolution for board
-resizeBtn.addEventListener("click", (e) => {
+resizeBtn.addEventListener("click", () => {
   let newSize = prompt(
     "Choose a new resolution: write a number up to 100. (ex: 100 will make the sketchpad have the resolution of 100x100)",
   );
@@ -42,7 +42,7 @@ resizeBtn.addEventListener("click", (e) => {
   generateGrid(width);
 });
 
-wipeBtn.addEventListener("click", (e) => {
+wipeBtn.addEventListener("click", () => {
   const squares = document.querySelectorAll(".square");
   squares.forEach((square) => {
     square.classList.remove("hovered");
