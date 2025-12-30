@@ -1,20 +1,20 @@
 const sketchpad = document.querySelector(".sketchpad");
-const resizeBtn = document.querySelector(".resize-btn");
+const resBtn = document.querySelector(".res-btn");
 const wipeBtn = document.querySelector(".wipe-btn");
-let width = 16;
+let resolution = 16;
 
 // create divs
-function createSquare(squareSize) {
+function createSquare() {
   const square = document.createElement("div");
   square.classList.add("square");
-  square.style.height = `${100 / squareSize}%`;
-  square.style.flexBasis = `${100 / squareSize}%`;
+  square.style.height = `${100 / resolution}%`;
+  square.style.flexBasis = `${100 / resolution}%`;
   sketchpad.appendChild(square);
 }
 
 function generateGrid() {
-  for (let i = 0; i < width * width; i++) {
-    createSquare(width);
+  for (let i = 0; i < resolution * resolution; i++) {
+    createSquare();
   }
 }
 
@@ -27,19 +27,19 @@ sketchpad.addEventListener("mouseover", (e) => {
 });
 
 // Get new resolution for board
-resizeBtn.addEventListener("click", () => {
+resBtn.addEventListener("click", () => {
   let newSize = prompt(
     "Choose a new resolution: write a number up to 100. (ex: 100 will make the sketchpad have the resolution of 100x100)",
   );
 
-  width = newSize;
+  resolution = newSize;
   const squares = document.querySelectorAll(".square");
 
   squares.forEach((square) => {
     square.remove();
   });
 
-  generateGrid(width);
+  generateGrid();
 });
 
 wipeBtn.addEventListener("click", () => {
