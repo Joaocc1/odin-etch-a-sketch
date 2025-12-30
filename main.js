@@ -12,14 +12,6 @@ function createSquare(squareSize) {
   sketchpad.appendChild(square);
 }
 
-// clean sketchpad board
-function wipeBoard() {
-  const squares = document.querySelectorAll(".square");
-  squares.forEach((square) => {
-    square.classList.remove("hovered");
-  });
-}
-
 function generateGrid() {
   for (let i = 0; i < width * width; i++) {
     createSquare(width);
@@ -51,7 +43,10 @@ resizeBtn.addEventListener("click", (e) => {
 });
 
 wipeBtn.addEventListener("click", (e) => {
-  wipeBoard();
+  const squares = document.querySelectorAll(".square");
+  squares.forEach((square) => {
+    square.classList.remove("hovered");
+  });
 });
 
 generateGrid();
