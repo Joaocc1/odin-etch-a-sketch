@@ -38,11 +38,7 @@ h1 {
   border: 1px solid;
 }
 
-/*.square {
+.square {
   box-sizing: border-box;
-  border: 1px solid;
-}*/
-
-.hovered {
-  background-color: #000000;
+  /*border: 1px solid;*/
 }

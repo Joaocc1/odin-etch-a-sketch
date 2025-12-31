@@ -7,6 +7,7 @@ let resolution = 16;
 function createSquare() {
   const square = document.createElement("div");
   square.classList.add("square");
+  square.style.opacity = 0.1;
   square.style.height = `${100 / resolution}%`;
   square.style.flexBasis = `${100 / resolution}%`;
   sketchpad.appendChild(square);
@@ -22,7 +23,12 @@ function generateGrid() {
 
 sketchpad.addEventListener("mouseover", (e) => {
   if (e.target.classList[0] === "square") {
-    e.target.classList.add("hovered");
+    let opacity = parseFloat(e.target.style.opacity);
+    if (opacity < 1) {
+      opacity = opacity + 0.1;
+      e.target.style.opacity = opacity;
+      e.target.style.backgroundColor = "#000000";
+    }
   }
 });
 
@@ -54,3 +60,5 @@ wipeBtn.addEventListener("click", () => {
 });
 
 generateGrid();
+
+// testing
