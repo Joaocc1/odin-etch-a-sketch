@@ -1,6 +1,10 @@
 const sketchpad = document.querySelector(".sketchpad");
 const resBtn = document.querySelector(".res-btn");
+const randomBtn = document.querySelector(".random-btn");
 const wipeBtn = document.querySelector(".wipe-btn");
+
+let isColorRandom = false;
+let color = getColor();
 let resolution = 16;
 
 // create divs
@@ -19,15 +23,28 @@ function generateGrid() {
   }
 }
 
+function getColor() {
+  if (isColorRandom === false) {
+    return "#000000";
+  } else if (isColorRandom === true) {
+    let red = Math.round(Math.random() * 255);
+    let green = Math.round(Math.random() * 255);
+    let blue = Math.round(Math.random() * 255);
+
+    return `rgb(${red}, ${green}, ${blue})`;
+  }
+}
+
 // Event Listeners
 
 sketchpad.addEventListener("mouseover", (e) => {
   if (e.target.classList[0] === "square") {
     let opacity = parseFloat(e.target.style.opacity);
+    color = getColor();
+    e.target.style.backgroundColor = color;
     if (opacity < 1) {
       opacity = opacity + 0.1;
       e.target.style.opacity = opacity;
-      e.target.style.backgroundColor = "#000000";
     }
   }
 });
@@ -52,6 +69,14 @@ resBtn.addEventListener("click", () => {
   }
 });
 
+randomBtn.addEventListener("click", () => {
+  if (isColorRandom === false) {
+    isColorRandom = true;
+  } else if (isColorRandom === true) {
+    isColorRandom = false;
+  }
+});
+
 wipeBtn.addEventListener("click", () => {
   const squares = document.querySelectorAll(".square");
   squares.forEach((square) => {
@@ -61,5 +86,3 @@ wipeBtn.addEventListener("click", () => {
 });
 
 generateGrid();
-
-// testing
