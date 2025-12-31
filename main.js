@@ -55,7 +55,8 @@ resBtn.addEventListener("click", () => {
 wipeBtn.addEventListener("click", () => {
   const squares = document.querySelectorAll(".square");
   squares.forEach((square) => {
-    square.classList.remove("hovered");
+    square.style.backgroundColor = "#ffffff";
+    square.style.opacity = 0.1;
   });
 });
 
