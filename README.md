@@ -12,3 +12,5 @@ I followed the assignment 4 parts.
 4. It was on this step that I realized my mistake in the second step and proceeded to correct it which took several tries to get it right. In my initial tries the height and width would not be the same even though it fill the whole area or it would be the same but would also have gaps between some of the `<div>` elements. Eventually I settled on using percentages to define the size of the `<div>` elements which worked perfectly with whatever number was used to define the resolution (example 16x16). At this stage I also changed the way the "hover" effect worked by no longer adding a class but instead change it's opacity directly.
 
 For the extra stuff I decided to include a button that would toggle if the color randomizes or not so that there's the option for one or the other.
+
+Live here: [(https://joaocc1.github.io/odin-etch-a-sketch/)]
