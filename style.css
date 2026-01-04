@@ -15,6 +15,14 @@ h1 {
   text-align: center;
 }
 
+button {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  padding: .5rem;
+  outline: none;
+  border: 3px solid #62696d;
+}
+
 .container {
   display: flex;
   justify-content: center;
