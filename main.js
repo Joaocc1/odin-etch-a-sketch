@@ -71,8 +71,10 @@ resBtn.addEventListener("click", () => {
 
 randomBtn.addEventListener("click", () => {
   if (isColorRandom === false) {
+    randomBtn.textContent = "Randomize color (on)";
     isColorRandom = true;
   } else if (isColorRandom === true) {
+    randomBtn.textContent = "Randomize color (off)";
     isColorRandom = false;
   }
 });
