@@ -13,4 +13,4 @@ I followed the assignment 4 parts.
 
 For the extra stuff I decided to include a button that would toggle if the color randomizes or not so that there's the option for one or the other.
 
-Live here: [(https://joaocc1.github.io/odin-etch-a-sketch/)]
+Live here: [https://joaocc1.github.io/odin-etch-a-sketch/]
